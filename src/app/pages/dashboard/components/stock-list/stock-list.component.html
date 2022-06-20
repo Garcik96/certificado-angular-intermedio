@@ -1,0 +1,14 @@
+<div class="pt-1 pr-[0.25rem] | flex flex-col items-center justify-center gap-2">
+  <app-stock-card
+    class="w-full"
+    *ngFor="let stock of list"
+    [data]="getStockCardData(stock)"
+    (deleteStockSelected)="deleteStockCard($event)"
+    (actionStockSelected)="actionStockCard($event)"
+  >
+  </app-stock-card>
+</div>
+
+<ng-template #itemTemplate let-item="dataStock">
+  <app-item-card class="w-full" [stock]="item"></app-item-card>
+</ng-template>

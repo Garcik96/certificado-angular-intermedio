@@ -1,0 +1,28 @@
+<div class="relative">
+  <svg
+    *ngIf="data.iconDeleted"
+    xmlns="http://www.w3.org/2000/svg"
+    class="absolute right-1 top-0 z-10 | hover:cursor-pointer"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    stroke-width="1"
+    stroke="#000"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    (click)="clickDeleteButton(data.dataStock)"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+
+  <div class="w-full | p-4 | flex flex-col | bg-white | border border-black rounded-md | translate-y-[-0.25rem] shadow-[0.25rem_0.25rem_#000]">
+    <h1 class="font-mono font-bold">{{ data.dataStock.company }} ({{ data.dataStock.symbol }})</h1>
+    <div class="flex gap-6">
+      <ng-container [ngTemplateOutlet]="data.itemTemplate" [ngTemplateOutletContext]="{ dataStock: data.dataStock, dataSentiment: data.dataSentiment }"></ng-container>
+    </div>
+    <app-button *ngIf="data.dataButton" [data]="getDataButton()"></app-button>
+  </div>
+</div>

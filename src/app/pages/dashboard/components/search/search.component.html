@@ -1,0 +1,9 @@
+<div
+  class="w-full | pt-3 pb-4 px-4 | bg-white | flex flex-col items-start justify-between gap-3 | border border-black rounded-md | translate-y-[-0.25rem] shadow-[0.25rem_0.25rem_#000]"
+>
+  <h1 class="font-mono">{{ title }}</h1>
+  <form class="flex items-center justify-center gap-4" [formGroup]="form">
+    <input class="pl-1 py-1 | font-mono | border border-black rounded-md" type="text" minlength="1" maxlength="5" formControlName="search" />
+    <app-button [data]="buttonSearch" [disabled]="form.invalid"></app-button>
+  </form>
+</div>

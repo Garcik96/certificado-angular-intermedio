@@ -1,0 +1,13 @@
+<div class="w-screen h-screen flex flex-col gap-5 pl-5 py-6 | overflow-hidden">
+  <app-search class="pr-6" [title]="titleSearch" [buttonSearch]="buttonSearch" [form]="formSearch"></app-search>
+  <app-stock-list
+    class="overflow-auto | pr-5"
+    [list]="stocks"
+    [dataButton]="dataButtonItemsList"
+    [iconDeleted]="iconDeleted"
+    (deleteStockSelected)="deleteStock($event)"
+    (actionStockSelected)="goSentimentDetails($event)"
+  ></app-stock-list>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>

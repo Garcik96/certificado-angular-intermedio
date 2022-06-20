@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: []
 })
 export class AppComponent {
-  title = 'angular-certification-intermediate';
+  constructor(private title: Title) {
+    this.title.setTitle('Stock Tracking App');
+  }
 }

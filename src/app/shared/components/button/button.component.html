@@ -1,0 +1,12 @@
+<button
+  *ngIf="!disabled"
+  class="px-3 py-1 | font-mono | bg-gray-200 active:bg-gray-400 | border border-black rounded-md | duration-[15ms] hover:translate-y-[-0.25rem] hover:shadow-[0.25rem_0.25rem_#000] active:translate-y-[0rem] active:shadow-none"
+  [type]="data.type"
+  (click)="doAction()"
+>
+  {{ data.text | titlecase }}
+</button>
+
+<button *ngIf="disabled" class="px-3 py-1 | font-mono | bg-gray-200 | border border-black rounded-md | cursor-not-allowed" [type]="data.type">
+  {{ data.text | titlecase }}
+</button>

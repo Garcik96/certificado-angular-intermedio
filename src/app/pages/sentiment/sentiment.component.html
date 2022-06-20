@@ -1,0 +1,9 @@
+<div class="w-screen h-screen flex flex-col gap-5 pl-5 py-6 | overflow-hidden">
+  <app-stock-card class="w-full | pr-6" [data]="getStockCardData()"></app-stock-card>
+  <app-button [data]="dataButton"></app-button>
+  <ng-template #itemTemplate let-item="dataSentiment">
+    <app-item-card class="w-full" [sentiments]="item"></app-item-card>
+  </ng-template>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>
